@@ -1,6 +1,7 @@
 html
 {
     scroll-behavior: smooth;
+    overflow-x:hidden;
 }
 
 
@@ -17,8 +18,7 @@ body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    box-sizing: border-box;
-    
+    max-width: 100%;
 }
 
 .logo
@@ -61,9 +61,9 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height:85vh;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 6rem;
 }
 .profile-image
 {
@@ -175,35 +175,33 @@ p {
 }
 
 .Rectangle-Image-container {
-    width: 400px; /* Adjust the width as needed */
-    height: 400px; /* Maintain the aspect ratio */
-    overflow: clip; /* Hide any overflow */
-    border-radius: 2rem; /* Adjust the radius as needed */
+    width: 100%; /* Container width adjusts to its parent */
+    max-width: 400px; /* Limit the maximum width */
+    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 2rem; /* Rounded corners */
     display: flex;
     justify-content: center;
     align-items: center;
-    display: block;
+    margin: auto; /* Center horizontally */
 }
 
 .Rectangle-Image-container img {
     width: 100%;
-    height: auto; 
-    object-fit: cover;
-     /* Ensures the image covers the container without distortion */
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
+
 
 
 .about-container
 {
-
-    margin: 3rem;
-    margin-left: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap:3rem;
-    align-items: center;
-    flex: 1;
+    margin-left: 7vw;
+    margin-top: 32px;
     flex-wrap: wrap;
     flex-grow: 1;
 }
@@ -212,6 +210,7 @@ p {
 .about-text-container {
     flex: 2; /* Text container takes up 2 parts of the available space */
     font-family: 'Poppins', sans-serif;
+    padding-right: 5vw;
 }
 
 
@@ -231,6 +230,9 @@ p {
     display: flex;
     justify-content: center;
     gap:4.5rem;
+    flex-wrap: wrap;
+
+
 }
 
 .languages, .tools
@@ -254,7 +256,7 @@ p {
     height: 85vh;
     margin: 0 10rem;
     box-sizing: border-box;
-    min-height: fit-content;
+    
 }
 
 
@@ -280,11 +282,6 @@ p {
     gap: 5rem;
 }
 
-#projects
-{
-    height: 85vh;
-}
-
 .project
 {
     padding: 1.5rem;
@@ -294,7 +291,7 @@ p {
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
-    margin-top: 2rem;
+   
 }
 
 .projects-container
@@ -303,7 +300,10 @@ p {
     display: flex;
     justify-content: center;
     gap: 3rem;
+    margin-top: 30px;
     padding: 0 10rem;
+    flex-wrap: wrap;
+    flex-shrink: 1;
 }
 
 .project-image img
@@ -333,7 +333,7 @@ p {
 }
 
 .contact-details-container{
-    margin: 1.5rem 30rem;
+    margin: 1.5rem 0rem;
     display: flex;
     flex-direction: row;
     justify-items: center;
@@ -387,23 +387,64 @@ a
     display: none !important;
 }
 
+
 @media all and (max-width:800px)
 {
-    #about
-    {
-        margin-top: 30vh;
-    }
 
     .hideonphone
     {
-        display: none;
+        display: none !important;
     }
     .menuicon 
     {
         display: block !important;
     }
+
+    .nav
+    {
+        margin: 0 0rem 0rem 3rem;
+    }
+
+    .languages , .tools
+    {
+        margin: 31px auto !important;
+        padding: 15px;
+        
+    }
+
+    .list-container
+    {
+        padding: 19px !important;
+        gap:2rem !important;
+    }
+
+    .skills-container
+    {
+        gap: 1rem;
+    }
 }
 
+
+@media (max-width: 768px) {
+    .Rectangle-Image-container {
+        max-width: 300px; /* Reduce the container size on smaller screens */
+        border-radius: 1.5rem; /* Slightly smaller border radius */
+    }
+}
+
+@media (max-width: 480px) {
+    .Rectangle-Image-container {
+        max-width: 200px; /* Further reduce size for very small screens */
+        border-radius: 1rem;
+    }
+
+    .profile-image
+    {
+        height: 250px;
+        width: 250px;
+    }
+
+}
 
 /* Side panel hidden by default */
 .side-panel {
@@ -448,3 +489,62 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+
+@media (max-width: 822px){
+    #about {
+        /* margin-top: 30vh; */
+        margin-top:8vh; /* Slightly larger heights */
+    }
+
+    .about-container
+    {
+        display: block;
+    }
+
+    .about-text-container {
+        margin-top: 3rem;
+    }
+
+    #projects
+    {
+        margin-top : 20vh;
+    }
+
+    .projects-container
+    {
+        padding: 0 4rem;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 822px) {
+    #about {
+        margin-top: 21vh; /* Adjust as needed for this range */
+    }
+    
+}
+
+
+@media (max-width: 400px) {
+    #about {
+        margin-top: 8vh; /* Adjust for smaller heights */
+    }
+
+    
+}
+
+
+@media (max-width: 1326px) {
+    #projects {
+        margin-top: 57vh; /* Increase spacing for smaller screens */
+    }
+
+    .item
+    {
+        margin: 15px;
+    }
+}
+
+
+
+
