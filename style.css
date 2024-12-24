@@ -147,13 +147,14 @@ p {
 {
     display: flex;
     justify-content: center;
+    white-space: nowrap;
 }
 
 .title
 {
     font-size: 21px;
     letter-spacing:1px;
-    white-space: nowrap;
+    
 }
 
 
@@ -493,14 +494,27 @@ img {
 }
 
 
-@media (max-width: 822px){
+/* Media query for screens between 480px and 439px */
+@media (max-width: 480px) and (min-width: 439px) {
     #about {
-        /* margin-top: 30vh; */
-        margin-top:8vh; /* Slightly larger heights */
+        margin-top: 30vh !important; /* Added to ensure this rule takes precedence */
+    }
+}
+
+/* Media query for screens below 400px */
+@media (max-width: 400px) {
+    #about {
+        margin-top: 8vh;
+    }
+}
+
+/* General media query for screens below 822px */
+@media (max-width: 822px) {
+    #about {
+        margin-top: 22vh;
     }
 
-    .about-container
-    {
+    .about-container {
         display: block;
     }
 
@@ -508,37 +522,26 @@ img {
         margin-top: 3rem;
     }
 
-    #projects
-    {
-        margin-top : 20vh;
+    #projects {
+        margin-top: 20vh;
     }
 
-    .projects-container
-    {
+    .projects-container {
         padding: 0 4rem;
     }
 
-    .contact-details-container
-    {
+    .contact-details-container {
         flex-direction: column;
     }
 }
 
-@media (min-width: 401px) and (max-width: 822px) {
-    #about {
-        margin-top: 21vh; /* Adjust as needed for this range */
-    }
-    
-}
 
 
-@media (max-width: 400px) {
-    #about {
-        margin-top: 8vh; /* Adjust for smaller heights */
-    }
 
-    
-}
+
+
+
+
 
 
 @media (max-width: 1326px) {
