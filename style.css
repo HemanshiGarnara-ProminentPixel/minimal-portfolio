@@ -24,6 +24,7 @@ body
 .logo
 {
     font-size: 2rem;
+    white-space: nowrap;
 }
 
 .nav
@@ -152,6 +153,7 @@ p {
 {
     font-size: 21px;
     letter-spacing:1px;
+    white-space: nowrap;
 }
 
 
