@@ -515,6 +515,11 @@ img {
     {
         padding: 0 4rem;
     }
+
+    .contact-details-container
+    {
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 401px) and (max-width: 822px) {
