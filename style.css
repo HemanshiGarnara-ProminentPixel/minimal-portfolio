@@ -555,6 +555,31 @@ img {
     }
 }
 
+/* Fade-in + slide-up animation */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Initially hidden */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* When in view */
+  .animate-on-scroll.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+
 
 
 
